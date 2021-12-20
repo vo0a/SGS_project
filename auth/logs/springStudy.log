@@ -1,0 +1,1 @@
+2021-12-20 15:06:05,658 [SpringApplicationShutdownHook] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry(deregister:62) - Unregistering application AUTH with eureka with status DOWN
