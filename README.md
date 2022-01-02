@@ -6,10 +6,11 @@
 
 
 ## 기능
-- 사용자 회원가입/로그인 : auth
+- 사용자 회원가입/로그인/탈퇴 : auth
   - Spring security + JWT
   - MySQL
   - Password Encryption
+  - 사용자 탈퇴
 - 유저 관리 페이지 : membership
   - 전체 사용자 목록 보기
   - 특정 사용자 정보 보기 
@@ -19,7 +20,7 @@
 
 
 ## 보완사항
-- 사용자 탈퇴
+- ~~사용자 탈퇴~~
   - MySQL 에서 비활성 상태로 변경 후
   - redis 사용하여 사용자 정보 30일간 임시 저장, 30일 이후 삭제
 - Password Encryption 직접 구현하기
@@ -27,3 +28,4 @@
   - 회원가입시 이메일 인증하기
   - 비밀번호 찾기
 - gateway 필터 제작
+- view logout 버튼 활성화
