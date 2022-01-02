@@ -1,5 +1,6 @@
 package com.example.auth.user.controller;
 
+import com.example.auth.exception.InvalidTokendException;
 import com.example.auth.user.dto.SignInRequestDto;
 import com.example.auth.user.dto.SignInResponseDto;
 import com.example.auth.user.dto.SignUpRequestDto;
@@ -28,7 +29,7 @@ public class UserController {
     }
 
     @DeleteMapping("/withdraw")
-    public ResponseEntity<String> withdraw(@RequestHeader("X-AUTH-TOKEN") String token) {
+    public ResponseEntity<String> withdraw(@RequestHeader("X-AUTH-TOKEN") String token) throws InvalidTokendException {
         return ResponseEntity.status(HttpStatus.OK).body(userService.withdraw(token));
     }
 }

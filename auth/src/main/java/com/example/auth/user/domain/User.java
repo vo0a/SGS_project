@@ -37,11 +37,11 @@ public class User extends BaseTimeEntity implements UserDetails {
     @Transient
     private Collection<SimpleGrantedAuthority> authorities;
 
-    @Column(nullable = false, columnDefinition = "TINYINT")
+    @Column(nullable = false, columnDefinition = "TINYINT(2)")
     private Role role;
 
     // 1 : 활성상태, 0 : 비활성상태
-    @Column(nullable = false, columnDefinition = "TINYINT")
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
     private short active;
 
     @Builder
@@ -81,5 +81,9 @@ public class User extends BaseTimeEntity implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public void toggleActive() {
+        this.active ^= 1;
     }
 }
